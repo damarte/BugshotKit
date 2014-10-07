@@ -409,11 +409,7 @@ UIImage *BSKImageWithDrawing(CGSize size, void (^drawingCommands)())
     UIGraphicsEndImageContext();
 
     if (interfaceOrientation != UIInterfaceOrientationPortrait) {
-        self.snapshotImage = [[UIImage alloc] initWithCGImage:self.snapshotImage.CGImage scale:UIScreen.mainScreen.scale orientation:(
-            interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown ? UIImageOrientationDown : (
-                interfaceOrientation == UIInterfaceOrientationLandscapeLeft ? UIImageOrientationRight : UIImageOrientationLeft
-            )
-        )];
+        self.snapshotImage = [[UIImage alloc] initWithCGImage:self.snapshotImage.CGImage scale:UIScreen.mainScreen.scale orientation:UIImageOrientationUp];
     }
 
     UIViewController *presentingViewController = self.window.rootViewController;
